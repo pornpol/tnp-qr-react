@@ -13,7 +13,7 @@ const PdfList = props => {
   const [isZipLoading, setIsZipLoading] = useState(false);
   const [isDeleteLoading, setIsDeleteLoading] = useState(false);
   const [pdfLinks, setPdfLinks] = useState([]);
-  const apiUrl = `${window.location.protocol}//${window.location.hostname}:${process.env.REACT_APP_API_PORT}/api/v1/qrs/pdfs`;
+  const apiUrl = `/api/v1/qrs/pdfs`;
 
   useEffect(() => {
     fetch(apiUrl)
@@ -24,7 +24,7 @@ const PdfList = props => {
   const onGetZip = event => {
     event.preventDefault();
     setIsZipLoading(true);
-    const apiUrl = `${window.location.protocol}//${window.location.hostname}:${process.env.REACT_APP_API_PORT}/api/v1/qrs/zip`;
+    const apiUrl = `/api/v1/qrs/zip`;
 
     fetch(apiUrl)
       .then(res => res.blob())
@@ -38,7 +38,7 @@ const PdfList = props => {
   const onDeletePdf = event => {
     event.preventDefault();
     setIsDeleteLoading(true);
-    const apiUrl = `${window.location.protocol}//${window.location.hostname}:${process.env.REACT_APP_API_PORT}/api/v1/qrs/pdfs`;
+    const apiUrl = `/api/v1/qrs/pdfs`;
 
     fetch(apiUrl, {
       method: 'DELETE'

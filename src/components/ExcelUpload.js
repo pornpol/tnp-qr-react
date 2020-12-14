@@ -10,7 +10,7 @@ const ExcelUpload = props => {
     e.preventDefault();
     setIsUploading(true);
 
-    const apiUrl = `${window.location.protocol}//${window.location.hostname}:${process.env.REACT_APP_API_PORT}/api/v1/qrs/excels`;
+    const apiUrl = `/api/v1/qrs/excels`;
 
     const formData = new FormData();
 
@@ -33,7 +33,7 @@ const ExcelUpload = props => {
   const onDeleteDatabase = e => {
     e.preventDefault();
     setIsDeleteLoading(true);
-    const apiUrl = `${window.location.protocol}//${window.location.hostname}:${process.env.REACT_APP_API_PORT}/api/v1/qrs`;
+    const apiUrl = `/api/v1/qrs`;
 
     fetch(apiUrl, {
       method: 'DELETE'

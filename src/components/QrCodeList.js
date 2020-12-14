@@ -13,7 +13,7 @@ const QrCodeList = props => {
   const onLoadQrs = useCallback(() => {
     setIsQrLoading(true);
 
-    const apiUrl = `${window.location.protocol}//${window.location.hostname}:${process.env.REACT_APP_API_PORT}/api/v1/qrs/?start=${startIndex}&end=${endIndex}`;
+    const apiUrl = `/api/v1/qrs/?start=${startIndex}&end=${endIndex}`;
 
     console.log(apiUrl);
 
@@ -30,7 +30,7 @@ const QrCodeList = props => {
     e.preventDefault();
     setIsPdfLoading(true);
     props.onIsUpdate(false);
-    const apiUrl = `${window.location.protocol}//${window.location.hostname}:${process.env.REACT_APP_API_PORT}/api/v1/qrs/pdfs`;
+    const apiUrl = `/api/v1/qrs/pdfs`;
     fetch(apiUrl, {
       method: 'POST',
       headers: {
